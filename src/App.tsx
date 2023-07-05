@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>太酷了！</h1>
+        <h1>太酷了！232132131</h1>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
