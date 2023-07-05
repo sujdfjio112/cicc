@@ -1,26 +1,24 @@
-name: CD
+name: Deploy
 
 on:
   push:
     branches:
-      - main # 可以是您要部署到 Pages 的任何分支
+      - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          node-version: "16.x"
-      - name: Install dependencies
-        run: npm install
-      - name: Build site
-        run: npm run build # 这里需要根据您的项目进行相应的构建命令
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build # 这里需要根据您的项目进行相应的构建输出目录
+          branch: gh-pages
+          folder: dist
