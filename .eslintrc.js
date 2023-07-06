@@ -1,19 +1,15 @@
-module.exports = {
-  env: {
-      browser: true,
-      es2021: true,
-  },
+export default {
   parser: '@typescript-eslint/parser',
-  extends: ['plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'prettier/@typescript-eslint', 'plugin:prettier/recommended'],
-  parserOptions: {
-      sourceType: 'module',
-      ecmaVersion: 'latest',
-      ecmaFeatures: {
-          jsx: true,
-      },
+  plugins: ['@typescript-eslint'],
+  extends: ['plugin:@typescript-eslint/recommended'],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
   },
-  rules: {
-      'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts'] }],
-  },
-  plugins: ['prettier', 'react'],
+  "rules": {
+    // 指定要使用的规则
+    "no-console": "error",
+    "no-unused-vars": "warn",
+    "semi": "error"
+  }
 };
