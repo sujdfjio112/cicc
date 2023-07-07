@@ -2,12 +2,12 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -29,13 +29,3 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Trigger CD
-        uses: octo-linker/action-workflow-dispatch@v2.1.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          workflow: CD
-          ref: main
-          inputs: |
-            environment: production
