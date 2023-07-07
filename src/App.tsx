@@ -15,8 +15,8 @@ const App: FC<Props> = ({ value }) => {
     <>
       <div className="App">
         <header className="App-header">
-          <img src={reactLogo} className="App-logo" alt="logo" />
-          <img src={viteLogo} className="App-logo" alt="logo" />
+          <img src={reactLogo} className="App-logo" alt="logo" width="100px" />
+          <img src={viteLogo} className="App-logo" alt="logo" width="100px" />
           <p>Hello Vite + React!!!!!!!!</p>
           <p>
             {/*
