@@ -1,61 +1,68 @@
+
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Code coverage report for App.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-      .coverage-summary .sorter {
-        background-image: url(sort-arrow-sprite.png);
-      }
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
     </style>
-  </head>
-
-  <body>
-    <div class="wrapper">
-      <div class="pad1">
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
         <h1><a href="index.html">All files</a> App.tsx</h1>
-        <div class="clearfix">
-          <div class="fl pad1y space-right2">
-            <span class="strong">100% </span>
-            <span class="quiet">Statements</span>
-            <span class="fraction">10/10</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">100% </span>
-            <span class="quiet">Branches</span>
-            <span class="fraction">0/0</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">100% </span>
-            <span class="quiet">Functions</span>
-            <span class="fraction">3/3</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">100% </span>
-            <span class="quiet">Lines</span>
-            <span class="fraction">9/9</span>
-          </div>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>10/10</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>3/3</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>9/9</span>
+            </div>
+        
+            
         </div>
         <p class="quiet">
-          Press <em>n</em> or <em>j</em> to go to the next uncovered block,
-          <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
         <template id="filterTemplate">
-          <div class="quiet">
-            Filter:
-            <input oninput="onInput()" type="search" id="fileSearch" />
-          </div>
+            <div class="quiet">
+                Filter:
+                <input oninput="onInput()" type="search" id="fileSearch">
+            </div>
         </template>
-      </div>
-      <div class="status-line high"></div>
-      <pre><table class="coverage">
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -153,27 +160,27 @@ const App: FC&lt;Props&gt; = ({ value }) =&gt; {
 &nbsp;
   return (
     &lt;&gt;
-    &lt;div className="App"&gt;
-      &lt;header className="App-header"&gt;
-        &lt;img src={reactLogo} className="App-logo" alt="logo" /&gt;
-        &lt;img src={viteLogo} className="App-logo" alt="logo" /&gt;
-        &lt;p&gt;Hello Vite + React!!!!!!!!&lt;/p&gt;
-        &lt;p&gt;
-          {/*
+      &lt;div className="App"&gt;
+        &lt;header className="App-header"&gt;
+          &lt;img src={reactLogo} className="App-logo" alt="logo" /&gt;
+          &lt;img src={viteLogo} className="App-logo" alt="logo" /&gt;
+          &lt;p&gt;Hello Vite + React!!!!!!!!&lt;/p&gt;
+          &lt;p&gt;
+            {/*
             测试代码中需要获取的DOM元素用role属性标记，这里的role属性只会在测试代码中用到，
             这样子就可以避免代码因需求改动时，因DOM属性改变导致测试不通过。有利于TDD（测试驱动开发）开发的进行
           */}
-          &lt;button
-            role="button"
-            type="button"
-            onClick={() =&gt; setCount((v) =&gt; v + 1)}
-          &gt;
-            count is: {count}
-          &lt;/button&gt;
-        &lt;/p&gt;
-        &lt;p role="props"&gt;{value}&lt;/p&gt;
-      &lt;/header&gt;
-    &lt;/div&gt;
+            &lt;button
+              role="button"
+              type="button"
+              onClick={() =&gt; setCount((v) =&gt; v + 1)}
+            &gt;
+              count is: {count}
+            &lt;/button&gt;
+          &lt;/p&gt;
+          &lt;p role="props"&gt;{value}&lt;/p&gt;
+        &lt;/header&gt;
+      &lt;/div&gt;
     &lt;/&gt;
   )
 }
@@ -181,27 +188,21 @@ const App: FC&lt;Props&gt; = ({ value }) =&gt; {
 export default App
 &nbsp;</pre></td></tr></table></pre>
 
-      <div class="push"></div>
-      <!-- for sticky footer -->
-    </div>
-    <!-- /wrapper -->
-    <div class="footer quiet pad2 space-top1 center small">
-      Code coverage generated by
-      <a
-        href="https://istanbul.js.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >istanbul</a
-      >
-      at 2023-07-06T05:48:10.349Z
-    </div>
-    <script src="prettify.js"></script>
-    <script>
-      window.onload = function () {
-        prettyPrint()
-      }
-    </script>
-    <script src="sorter.js"></script>
-    <script src="block-navigation.js"></script>
-  </body>
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2023-07-07T02:12:28.977Z
+            </div>
+        <script src="prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="sorter.js"></script>
+        <script src="block-navigation.js"></script>
+    </body>
 </html>
+    
