@@ -17,7 +17,7 @@ const App: FC<Props> = ({ value }) => {
         <header className="App-header">
           <img src={reactLogo} className="App-logo" alt="logo" width="100px" />
           <img src={viteLogo} className="App-logo" alt="logo" width="100px" />
-          <p>Hello WamgQun!!!</p>
+          <p>Hello WangQun!!!</p>
           <p>
             {/*
             测试代码中需要获取的DOM元素用role属性标记，这里的role属性只会在测试代码中用到，
