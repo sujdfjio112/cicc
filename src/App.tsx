@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react"
 import type { FC } from "react"
 import reactLogo from "./assets/react.svg"
 import viteLogo from "/vite.svg"
@@ -8,71 +8,69 @@ interface Props {
   value?: string
 }
 
-
-
 const App: FC<Props> = ({ value }) => {
   const [count, setCount] = useState(0)
-  const [socket, setSocket] = useState<WebSocket | null>(null);
-  const [messages, setMessages] = useState<any[]>([]);
-  const [apiResponse, setApiResponse] = useState<string>('');
+  const [socket, setSocket] = useState<WebSocket | null>(null)
+  const [messages, setMessages] = useState<any[]>([])
+  const [apiResponse, setApiResponse] = useState<string>("")
 
   const initialized = useRef(false)
 
   useEffect(() => {
     if (!initialized.current) {
       initialized.current = true
-          // 创建 WebSocket 连接
-    const ws = new WebSocket('ws://localhost:4000/');
-    setSocket(ws);
+      // 创建 WebSocket 连接
+      const ws = new WebSocket("ws://localhost:4000/")
+      setSocket(ws)
 
-    // 监听 WebSocket 连接打开事件
-    ws.addEventListener('open', () => {
-      console.log('WebSocket 连接已打开');
+      // 监听 WebSocket 连接打开事件
+      ws.addEventListener("open", () => {
+        console.log("WebSocket 连接已打开")
 
-      // 发送第一个心跳消息
-      const heartbeatMsg = JSON.stringify({
-        type: 'heartbeat',
-        timestamp: new Date().getTime(),
-      });
-      ws.send(heartbeatMsg);
-    });
+        // 发送第一个心跳消息
+        const heartbeatMsg = JSON.stringify({
+          type: "heartbeat",
+          timestamp: new Date().getTime(),
+        })
+        ws.send(heartbeatMsg)
+      })
 
-    // 监听 WebSocket 连接关闭事件
-    ws.addEventListener('close', () => {
-      console.log('WebSocket 连接已关闭');
-    });
+      // 监听 WebSocket 连接关闭事件
+      ws.addEventListener("close", () => {
+        console.log("WebSocket 连接已关闭")
+      })
 
-    // 监听 WebSocket 消息事件
-    ws.addEventListener('message', (event) => {
-      const message = JSON.parse(event.data);
+      // 监听 WebSocket 消息事件
+      ws.addEventListener("message", (event) => {
+        const message = JSON.parse(event.data)
 
-      if (message.type === 'heartbeat') {
-        // console.log('收到心跳消息：', message);
-      } else {
-        console.log('收到其他消息：', message);
-        setMessages((prevMessages) => [...prevMessages, message]);
+        if (message.type === "heartbeat") {
+          // console.log('收到心跳消息：', message);
+        } else {
+          console.log("收到其他消息：", message)
+          setMessages((prevMessages) => [...prevMessages, message])
+        }
+      })
+      return () => {
+        // 关闭 WebSocket 连接
+        if (socket && socket.readyState === WebSocket.OPEN) {
+          socket.close()
+        }
       }
-    });
-    return () => {
-      // 关闭 WebSocket 连接
-      if (socket && socket.readyState === WebSocket.OPEN) {
-        socket.close();
-      }
-    };
     }
-  }, []);
+  }, [])
 
   function incrementCount() {
-      // 调用 API 接口
-      fetch('/api/hello')
+    // 调用 API 接口
+    fetch("/api/hello")
       .then((response) => response.text())
       .then((data) => {
-        console.log('API 响应数据：', data);
-        setApiResponse(data); 
+        console.log("API 响应数据：", data)
+        setApiResponse(data)
       })
       .catch((error) => {
-        console.error('API 调用错误：', error);
-      });
+        console.error("API 调用错误：", error)
+      })
   }
   return (
     <div>
@@ -108,7 +106,7 @@ const App: FC<Props> = ({ value }) => {
         </header>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
