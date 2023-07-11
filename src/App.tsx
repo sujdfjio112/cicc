@@ -81,7 +81,9 @@ const App: FC<Props> = ({ value }) => {
         ))}
       </ul>
       <h1>API 响应：</h1>
-      <button onClick={incrementCount}>增加计数器的值</button>
+      <button role="buttonMsg" onClick={incrementCount}>
+        增加计数器的值
+      </button>
       <p>{apiResponse}</p>
 
       <div className="App">
@@ -95,7 +97,7 @@ const App: FC<Props> = ({ value }) => {
             这样子就可以避免代码因需求改动时，因DOM属性改变导致测试不通过。有利于TDD（测试驱动开发）开发的进行
           */}
             <button
-              role="button"
+              role="buttonBox"
               type="button"
               onClick={() => setCount((v) => v + 1)}
             >
