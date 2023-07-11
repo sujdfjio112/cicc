@@ -14,7 +14,7 @@ test("click of button is available", () => {
 })
 
 test("WebSocket message handling on incrementCount click", async () => {
-  // 渲染应用程序
+  // 渲染应用程序1
   render(<App value="123" />)
 
   // 创建 WebSocket 服务器，并添加消息处理逻辑
