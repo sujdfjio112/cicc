@@ -17,8 +17,8 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "http://115.159.102.152:4000",
-        // target: "http://localhost:4000",
+        // target: "http://115.159.102.152:4000",
+        target: "http://localhost:4000",
         changeOrigin: true,
         cookieDomainRewrite: "",
         secure: false,
