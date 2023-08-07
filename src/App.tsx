@@ -70,22 +70,22 @@ const App: FC<Props> = ({ value }) => {
       .catch((error) => {
         console.error("API 调用错误：", error)
       })
-      // fetch('/api/gitpush', {
-      //   method: 'POST',
-      //   body: JSON.stringify({
-      //     name: 'John',
-      //     age: 30
-      //   }),
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   }
-      // })
-      //   .then(response => {
-      //     response.json().then(res => {
-      //       console.log(res);
-      //     })
-      //   })
-      //   .catch(error => console.error(error));
+    // fetch('/api/gitpush', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     name: 'John',
+    //     age: 30
+    //   }),
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   }
+    // })
+    //   .then(response => {
+    //     response.json().then(res => {
+    //       console.log(res);
+    //     })
+    //   })
+    //   .catch(error => console.error(error));
   }
   return (
     <div>
