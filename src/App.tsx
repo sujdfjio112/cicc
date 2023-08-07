@@ -12,7 +12,7 @@ const App: FC<Props> = ({ value }) => {
   const [count, setCount] = useState(0)
   const [socket, setSocket] = useState<WebSocket | null>(null)
   const [messages, setMessages] = useState<any[]>([])
-  const [apiResponse, setApiResponse] = useState<string>("")
+  const [apiResponse] = useState<string>("")
 
   const initialized = useRef(false)
 
@@ -20,7 +20,7 @@ const App: FC<Props> = ({ value }) => {
     if (!initialized.current) {
       initialized.current = true
       // 创建 WebSocket 连接
-      const ws = new WebSocket("ws://localhost:4000/")
+      const ws = new WebSocket("ws://115.159.102.152:4000/")
       setSocket(ws)
 
       // 监听 WebSocket 连接打开事件
@@ -66,11 +66,26 @@ const App: FC<Props> = ({ value }) => {
       .then((response) => response.text())
       .then((data) => {
         console.log("API 响应数据：", data)
-        setApiResponse(data)
       })
       .catch((error) => {
         console.error("API 调用错误：", error)
       })
+      // fetch('/api/gitpush', {
+      //   method: 'POST',
+      //   body: JSON.stringify({
+      //     name: 'John',
+      //     age: 30
+      //   }),
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   }
+      // })
+      //   .then(response => {
+      //     response.json().then(res => {
+      //       console.log(res);
+      //     })
+      //   })
+      //   .catch(error => console.error(error));
   }
   return (
     <div>
