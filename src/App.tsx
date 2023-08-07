@@ -20,7 +20,7 @@ const App: FC<Props> = ({ value }) => {
     if (!initialized.current) {
       initialized.current = true
       // 创建 WebSocket 连接
-      const ws = new WebSocket("ws://115.159.102.152:4000/")
+      const ws = new WebSocket("ws://localhost:4000/")
       setSocket(ws)
 
       // 监听 WebSocket 连接打开事件
