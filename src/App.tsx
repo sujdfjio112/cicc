@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import type { FC } from "react"
-import reactLogo from "./assets/react.svg"
-import viteLogo from "/vite.svg"
+// import reactLogo from "./assets/react.svg"
+// import viteLogo from "/vite.svg"
 import "./App.css"
 
 interface Props {
@@ -20,7 +20,7 @@ const App: FC<Props> = ({ value }) => {
     if (!initialized.current) {
       initialized.current = true
       // 创建 WebSocket 连接
-      const ws = new WebSocket("ws://localhost:4000/")
+      const ws = new WebSocket("ws://115.159.102.152:4000")
       setSocket(ws)
 
       // 监听 WebSocket 连接打开事件
@@ -103,8 +103,8 @@ const App: FC<Props> = ({ value }) => {
 
       <div className="App">
         <header className="App-header">
-          <img src={reactLogo} className="App-logo" alt="logo" width="100px" />
-          <img src={viteLogo} className="App-logo" alt="logo" width="100px" />
+          {/* <img src={reactLogo} className="App-logo" alt="logo" width="100px" />
+          <img src={viteLogo} className="App-logo" alt="logo" width="100px" /> */}
           <p>Hello 1223WangQun!!!</p>
           <p>
             {/*
