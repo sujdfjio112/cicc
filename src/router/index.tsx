@@ -6,9 +6,9 @@ import Communication from "../pages/communication"
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" Component={Home} />
-      <Route path="/about" Component={About} />
-      <Route path="/communication" Component={Communication} />
+      <Route path="/" element={<Home />} index={true} />
+      <Route path="/about" element={<About />} />
+      <Route path="/communication" element={<Communication />} />
     </Routes>
   )
 }
