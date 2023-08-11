@@ -12,8 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Clear npm cache
+        run: npm cache clean --force
+
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Lint JavaScript
         run: npm run lint:js
