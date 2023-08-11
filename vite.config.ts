@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react"
 import path from "path"
 
 export default defineConfig({
-  base: "/cicc",
+  base: "./",
   plugins: [react()],
   // 配置路径别名
   resolve: {
