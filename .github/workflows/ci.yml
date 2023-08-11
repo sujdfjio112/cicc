@@ -1,9 +1,8 @@
-name: CI and Deploy
+name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
@@ -28,7 +27,5 @@ jobs:
       - name: Test
         run: npm run test
 
-      - name: Install and Build
-        run: |
-          npm install
-          npm run build
+      - name: Build
+        run: npm run build
