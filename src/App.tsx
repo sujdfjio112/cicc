@@ -3,7 +3,7 @@ import Routes from "./router/index"
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/cicc">
       <Routes />
     </Router>
   )
