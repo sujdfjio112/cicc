@@ -5,8 +5,8 @@
   "type": "module",
   "homepage": "/cicc",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "vitejs",
+    "build": "tsc && vite build --mode production",
     "preview": "vite preview",
     "test": "jest",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx ./src",

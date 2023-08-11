@@ -3,14 +3,11 @@ import Routes from "./router/index"
 
 const App = () => {
   return (
-    <Router>
+<Router basename={import.meta.env.VITE_BASENAME}>
       <Routes />
     </Router>
   )
 }
 
-// const App = () => {
-//   return <div>231231</div>
-// }
 
 export default App
